@@ -109,35 +109,22 @@
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
       <div class="carousel-inner">
-        <div class="carousel-item active c1">
+
+          {% for item in noticias %}
+
+          <div class="carousel-item {{'active' if item == noticias[0]}} c">
+          
+            <img src="{{item.get_image()}}" class="new_img">
   
-          <div class="container">
-            <div class="carousel-caption text-start">
-              <h1>Brasil tem 672 mortes por Covid-19 e 59.253 novos casos em 24h</h1>
-              <p>Mais de 26 milhões de pessoas já se recuperaram da doença no país, segundo dados do Ministério da Saúde; média móvel de óbitos registra tendência de queda</p>
-              <p><a class="btn btn-lg btn-primary" href="#">Ler Notícia</a></p>
+            <div class="container">
+              <div class="carousel-caption text-start">
+                <h1>{{item.get_tittle()}}</h1>
+                <p>{{item.get_headline()}}</p>
+                <p><a class="btn btn-lg btn-primary" href="{{url_for('show_noticia', id=item.get_id())}}">Ler Notícia</a></p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="carousel-item c2">
-  
-          <div class="container">
-            <div class="carousel-caption text-start">
-              <h1>Começa a venda de autotestes de Covid nas farmácias</h1>
-              <p>Farmácias brasileiras começaram a vender o autoteste de Covid. Com esse kit, a própria pessoa pode fazer o exame, em qualquer lugar, e saber se está infectado. Caso esteja, ela deve ir a uma unidade de saúde e fazer um exame PCR.</p>
-              <p><a class="btn btn-lg btn-primary" href="#">Ler Notícia</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item c3">
-  
-          <div class="container">
-            <div class="carousel-caption text-start">
-              <h1>Vacinação contra a Covid-19 em Goiás: veja perguntas e respostas</h1>
-              <p>Estado recebeu 14.526.400 doses das vacinas CoronaVac, AstraZeneca/Oxford, Pfizer/BioNTech e Janssen para imunizar população goiana contra Covid-19. Goiás tem 7,1 milhões de habitantes.</p>
-              <p><a class="btn btn-lg btn-primary" href="#">Ler Notícia</a></p>
-            </div>
-          </div>
+          {% endfor %}
         </div>
       </div>
     </div>
@@ -164,13 +151,13 @@
   </footer>
 
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+  <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
     integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
     integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
   </script>
 </body>
