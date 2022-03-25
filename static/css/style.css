@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/* importando fonte Roboto font-family: 'Roboto', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Andada+Pro&display=swap');
+/* importando fonte AndadaPro font-family: 'Andada Pro', serif; */
+
+*{
+    color: #ffffff;
+}
+
+body{
+    background-color: #212121;
+}
+
+p{
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* Estilizando navbar */
+
+.navbar {
+    background-color: #2A3346;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Andada Pro', serif;
+    padding: 15px 5%;
+}
+
+.sidebar {
+    background-color: #2A3346;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Andada Pro', serif;
+
+}
+
+.navbar a {
+    color: #ffffff;
+    font-size: 22px;
+}
+
+.sidebar a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 19px;
+}
+
+.navbar a img,
+svg {
+    margin-right: 5px;
+}
+
+section {
+    margin-top: 74px;
+}
+
+.list-estados ul li {
+    list-style-type: none;
+}
+
+.list-estados ul li a:hover {
+    color: #838791;
+    transition: 200ms ease-in-out;
+}
+
+
+/* Estilizando Carrossel */
+
+.c1{
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../storage/not\ 1.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #838791;
+}
+
+.c2{
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../storage/not\ 2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #838791;
+}
+
+.c3{
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../storage/not\ 3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #838791;
+}
+
+.carousel{
+    margin-top: -74px;
+}
+
+.carousel-item{
+    height: 32rem;
+    position: relative;
+}
+
+.carousel-item h2{
+    font-family: 'Andada Pro', serif;
+    font-weight: bold;
+}
+
+.carousel-item div{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 50px;
+}
+
+.carousel-item a{
+    background-color: #2A3346;
+    border-color: #2A3346;
+}
+
+.carousel-item a:hover{
+    background-color: #838791;
+    border-color: #838791;
+    transition: 200ms ease-in-out;
+}
+
+.row{
+    max-width: 100%;
+}
+
+.card{
+    max-width: 30%;
+    background-color: #3D3D3D;
+    padding: calc(var(--bs-gutter-x) * .5);}
+
+.card a{
+    background-color: #2A3346;
+    border-color: #2A3346;
+}
+
+.card a:hover{
+    background-color: #838791;
+    border-color: #838791;
+    transition: 200ms ease-in-out;
+}
+
+footer{
+    background-color: #2A3346;
+}

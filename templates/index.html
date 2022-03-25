@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static',filename='icons/covid.ico') }}" type="image/x-icon">
+  <title>Covid-19 Journal</title>
+</head>
+
+<body>
+
+  <!-- Cabeçalho -->
+
+  <header>
+    <nav class="navbar sticky-top shadow flex-nowrap">
+      <div class="container-fluid">
+
+        <div class="conainer-fluid">
+          <a class="d-inline-flex navbar-brand" data-bs-toggle="offcanvas" href="#estados" role="button"
+            aria-controls="estados">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-justify"
+              viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
+            </svg>
+            Estados
+          </a>
+        </div>
+
+
+        <a class="navbar-brand" href="{{ url_for('pagina_principal')}}">
+          <img src="{{ url_for('static',filename='storage/covid.png') }}" width="30px" height="30px">
+          Covid-19 Journal
+        </a>
+
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Pesquisar Notícia" aria-label="search" />
+          <a href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="35" fill="currentColor" class="bi bi-search"
+              viewBox="0 0 16 16">
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+            </svg>
+          </a>
+        </form>
+
+      </div>
+    </nav>
+  </header>
+
+  <!-- Sidebar Estados -->
+
+  <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="estados" aria-labelledby="estadosLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="estadosLabel">Estados</h5>
+      <button type="button" class="btn-close-white btn-close text-reset" data-bs-dismiss="offcanvas"
+        aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div>
+        <div class="list-estados">
+          <ul>
+            <li><a href="#">Acre</a></li>
+            <li><a href="#">Alagoas</a></li>
+            <li><a href="#">Amapá</a></li>
+            <li><a href="#">Amazonas</a></li>
+            <li><a href="#">Bahia</a></li>
+            <li><a href="#">Ceará</a></li>
+            <li><a href="#">Distrito Federal</a></li>
+            <li><a href="#">Espírito Santo</a></li>
+            <li><a href="#">Goiás</a></li>
+            <li><a href="#">Maranhão</a></li>
+            <li><a href="#">Mato Grosso</a></li>
+            <li><a href="#">Mato Grosso do Sul</a></li>
+            <li><a href="#">Minas Gerais</a></li>
+            <li><a href="#">Pará</a></li>
+            <li><a href="#">Paraíba</a></li>
+            <li><a href="#">Paraná</a></li>
+            <li><a href="#">Pernambuco</a></li>
+            <li><a href="#">Piauí</a></li>
+            <li><a href="#">Rio de Janeiro</a></li>
+            <li><a href="#">Rio Grande do Norte</a></li>
+            <li><a href="#">Rio Grande do Sul</a></li>
+            <li><a href="#">Rondônia</a></li>
+            <li><a href="#">Roraima</a></li>
+            <li><a href="#">Santa Catarina</a></li>
+            <li><a href="#">São Paulo</a></li>
+            <li><a href="#">Sergipe</a></li>
+            <li><a href="#">Tocantins</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sessão principal -->
+  <section>
+
+    <!-- Carrossel de destaques -->
+    <div id="myCarousel" class="carousel slide shadow" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active c1">
+  
+          <div class="container">
+            <div class="carousel-caption text-start">
+              <h1>Brasil tem 672 mortes por Covid-19 e 59.253 novos casos em 24h</h1>
+              <p>Mais de 26 milhões de pessoas já se recuperaram da doença no país, segundo dados do Ministério da Saúde; média móvel de óbitos registra tendência de queda</p>
+              <p><a class="btn btn-lg btn-primary" href="#">Ler Notícia</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item c2">
+  
+          <div class="container">
+            <div class="carousel-caption text-start">
+              <h1>Começa a venda de autotestes de Covid nas farmácias</h1>
+              <p>Farmácias brasileiras começaram a vender o autoteste de Covid. Com esse kit, a própria pessoa pode fazer o exame, em qualquer lugar, e saber se está infectado. Caso esteja, ela deve ir a uma unidade de saúde e fazer um exame PCR.</p>
+              <p><a class="btn btn-lg btn-primary" href="#">Ler Notícia</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item c3">
+  
+          <div class="container">
+            <div class="carousel-caption text-start">
+              <h1>Vacinação contra a Covid-19 em Goiás: veja perguntas e respostas</h1>
+              <p>Estado recebeu 14.526.400 doses das vacinas CoronaVac, AstraZeneca/Oxford, Pfizer/BioNTech e Janssen para imunizar população goiana contra Covid-19. Goiás tem 7,1 milhões de habitantes.</p>
+              <p><a class="btn btn-lg btn-primary" href="#">Ler Notícia</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- fim do carrossel -->
+
+    <!-- Lista de notícias (dinâmica) -->
+    <div class="row flex-wrap justify-content-center m-0">
+      {% for item in noticias %}
+      <div class="card m-4 col shadow">
+        <img src={{item.get_image()}} class="card-img-top shadow" alt="..." style="max-width: 100%; max-height: 200px; border-radius: 5px;">
+        <div class="card-body">
+          <h5 class="card-title">{{ item.get_tittle() }}</h5>
+          <p class="card-text">{{item.get_headline()}}</p>
+          <a href="{{url_for('show_noticia', id=item.get_id())}}" class="btn btn-sm btn-primary">Ver Mais</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <!-- fim da lista -->
+  </section>
+
+  <footer class="d-flex justify-content-center align-items-center shadow">
+    <p class="my-2">© 2022 Thiago Cardoso (202120325)</p>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
