@@ -16,42 +16,42 @@
 
   <!-- Cabeçalho -->
 
-    <nav class="navbar sticky shadow flex-nowrap">
-      <div class="container-fluid">
+  <nav class="navbar fixed-top shadow flex-nowrap">
+    <div class="container-fluid">
 
-        <div class="conainer-fluid estado">
-          <a class="d-inline-flex navbar-brand" data-bs-toggle="offcanvas" href="#estados" role="button"
-            aria-controls="estados">
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-justify"
-              viewBox="0 0 16 16">
-              <path fill-rule="evenodd"
-                d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
-            </svg>
-            <span>Estados</span>
-          </a>
-        </div>
-
-
-        <a class="navbar-brand titulo" href="{{ url_for('pagina_principal')}}">
-          <img src="{{ url_for('static',filename='storage/covid.png') }}" width="30px" height="30px">
-          <span>Covid-19 Journal</span>
-         
+      <div class="conainer-fluid estado">
+        <a class="d-inline-flex navbar-brand" data-bs-toggle="offcanvas" href="#estados" role="button"
+          aria-controls="estados">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-justify"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
+          </svg>
+          <span>Estados</span>
         </a>
-        <div class="pesquisa">
-          <form class="d-flex search align-items-center pesquisa">
-
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="grey" class="bi bi-search m-1"
-              viewBox="0 0 16 16">
-              <path
-                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-            </svg>
-            <input class="form-control ms-1" type="search" placeholder="Pesquisar Notícia" aria-label="search"
-              style="border: none;" />
-
-          </form>
-        </div>
       </div>
-    </nav>
+
+
+      <a class="navbar-brand titulo" href="{{ url_for('pagina_principal')}}">
+        <img src="{{ url_for('static',filename='storage/covid.png') }}" width="30px" height="30px">
+        <span>Covid-19 Journal</span>
+
+      </a>
+      <div class="pesquisa">
+        <form class="d-flex search align-items-center pesquisa">
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="grey" class="bi bi-search m-1"
+            viewBox="0 0 16 16">
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+          </svg>
+          <input class="form-control ms-1" type="search" placeholder="Pesquisar Notícia" aria-label="search"
+            style="border: none;" />
+
+        </form>
+      </div>
+    </div>
+  </nav>
 
   <!-- Sidebar Estados -->
 
@@ -65,33 +65,17 @@
       <div>
         <div class="list-estados">
           <ul>
-            <li><a href="#">Acre</a></li>
-            <li><a href="#">Alagoas</a></li>
-            <li><a href="#">Amapá</a></li>
-            <li><a href="#">Amazonas</a></li>
-            <li><a href="#">Bahia</a></li>
-            <li><a href="#">Ceará</a></li>
-            <li><a href="#">Distrito Federal</a></li>
-            <li><a href="#">Espírito Santo</a></li>
-            <li><a href="#">Goiás</a></li>
-            <li><a href="#">Maranhão</a></li>
-            <li><a href="#">Mato Grosso</a></li>
-            <li><a href="#">Mato Grosso do Sul</a></li>
-            <li><a href="#">Minas Gerais</a></li>
-            <li><a href="#">Pará</a></li>
-            <li><a href="#">Paraíba</a></li>
-            <li><a href="#">Paraná</a></li>
-            <li><a href="#">Pernambuco</a></li>
-            <li><a href="#">Piauí</a></li>
-            <li><a href="#">Rio de Janeiro</a></li>
-            <li><a href="#">Rio Grande do Norte</a></li>
-            <li><a href="#">Rio Grande do Sul</a></li>
-            <li><a href="#">Rondônia</a></li>
-            <li><a href="#">Roraima</a></li>
-            <li><a href="#">Santa Catarina</a></li>
-            <li><a href="#">São Paulo</a></li>
-            <li><a href="#">Sergipe</a></li>
-            <li><a href="#">Tocantins</a></li>
+            <li class="estado-list" onclick="mostrarTodas()"><a href="# ">
+              Mosrtar Todas
+            </a></li>
+
+            {% for item in estados %}
+            <li class="estado-list" id=".{{ item.get_sigla() }}" onclick="filtraNoticia(id)"><a href="# ">
+              <img src="{{ item.get_flag() }}">
+              {{item.get_nome()}}
+            </a></li>
+            {% endfor %}
+
           </ul>
         </div>
       </div>
@@ -133,11 +117,12 @@
     <!-- fim do carrossel -->
 
     <h1 class="text-center m-3">Principais Noticias</h1>
+    <div id="msg"></div>
     <!-- Lista de notícias (dinâmica) -->
     <div class="row flex-row flex-wrap align-content-center m-0">
       {% for item in noticias %}
-      <div class="card m-4 col shadow">
-        <img src={{item.get_image()}} class="card-img-top shadow" alt="..."
+      <div class="card m-4 col shadow {{ item.get_state() }}">
+        <img src={{ item.get_image() }} class="card-img-top shadow" alt="..."
           style="max-width: 100%; max-height: 200px; border-radius: 5px;">
         <div class="card-body">
           <h5 class="card-title">{{ item.get_tittle() }}</h5>
@@ -154,7 +139,9 @@
     <p class="my-2">© 2022 Thiago Cardoso (202120325)</p>
   </footer>
 
+  <script defer src="{{ url_for('static',filename='js/script.js') }}">
 
+  </script>
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
   </script>

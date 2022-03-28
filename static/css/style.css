@@ -48,6 +48,15 @@ p{
     font-size: 19px;
 }
 
+.estado-list{
+    max-width: 80%;
+    margin: 10px 0px;
+}
+
+.estado-list img{
+    max-width: 20%;
+}
+
 .search{
     background-color: #ffffff;
     border-radius: 5px;
@@ -82,10 +91,6 @@ section {
     opacity: 40%;
 }
 
-.carousel{
-    margin-top: -74px;
-}
-
 .carousel-item{
     height: 32rem;
     position: relative;
@@ -114,6 +119,7 @@ section {
 
 .card{
     min-width: 30%;
+    max-width: 30%;
     background-color: #3D3D3D;
     padding: calc(var(--bs-gutter-x) * .5);}
 
