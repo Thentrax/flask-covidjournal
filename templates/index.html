@@ -31,22 +31,21 @@
         </a>
       </div>
 
-
       <a class="navbar-brand titulo" href="{{ url_for('pagina_principal')}}">
         <img src="{{ url_for('static',filename='storage/covid.png') }}" width="30px" height="30px">
         <span>Covid-19 Journal</span>
-
       </a>
+
       <div class="pesquisa">
-        <form class="d-flex search align-items-center pesquisa">
+        <form class="d-flex search align-items-center pesquisa" onsubmit="pesquisarNoticia()">
 
           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="grey" class="bi bi-search m-1"
             viewBox="0 0 16 16">
             <path
               d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
           </svg>
-          <input class="form-control ms-1" type="search" placeholder="Pesquisar Notícia" aria-label="search"
-            style="border: none;" />
+          <input class="form-control ms-1" id="search" type="search" placeholder="Pesquisar Notícia" aria-label="search"
+            style="border: none;" onkeyup="pesquisarNoticia()"/>
 
         </form>
       </div>
@@ -66,14 +65,14 @@
         <div class="list-estados">
           <ul>
             <li class="estado-list" onclick="mostrarTodas()"><a href="# ">
-              Mosrtar Todas
-            </a></li>
+                Mosrtar Todas
+              </a></li>
 
             {% for item in estados %}
             <li class="estado-list" id=".{{ item.get_sigla() }}" onclick="filtraNoticia(id)"><a href="# ">
-              <img src="{{ item.get_flag() }}">
-              {{item.get_nome()}}
-            </a></li>
+                <img src="{{ item.get_flag() }}">
+                {{item.get_nome()}}
+              </a></li>
             {% endfor %}
 
           </ul>
@@ -119,7 +118,7 @@
     <h1 class="text-center m-3">Principais Noticias</h1>
     <div id="msg"></div>
     <!-- Lista de notícias (dinâmica) -->
-    <div class="row flex-row flex-wrap align-content-center m-0">
+    <div class="row flex-row flex-wrap align-content-center m-0 justify-content-center">
       {% for item in noticias %}
       <div class="card m-4 col shadow {{ item.get_state() }}">
         <img src={{ item.get_image() }} class="card-img-top shadow" alt="..."
@@ -135,7 +134,7 @@
     <!-- fim da lista -->
   </section>
 
-  <footer class="d-flex justify-content-center align-items-center shadow">
+  <footer class="d-flex justify-content-center align-items-center shadow py-3">
     <p class="my-2">© 2022 Thiago Cardoso (202120325)</p>
   </footer>
 
