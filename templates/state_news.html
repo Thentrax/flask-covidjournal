@@ -64,7 +64,7 @@
       <div>
         <div class="list-estados">
           <ul>
-            <li class="estado-list" onclick="mostrarTodas()"><a href="# ">
+            <li class="estado-list" onclick="mostrarTodas()"><a href="{{ url_for('pagina_principal')}}">
                 Mosrtar Todas
               </a></li>
 
@@ -82,45 +82,12 @@
   </div>
 
   <!-- Sessão principal -->
-  <section>
-
-    <!-- Carrossel de destaques -->
-    <div id="myCarousel" class="carousel slide shadow" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
-          aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
-      <div class="carousel-inner">
-
-        {% for item in carrossel %}
-        <div class="carousel-item {{'active' if item == carrossel[0]}} c">
-
-          <img src="{{item.get_image()}}" class="new_img">
-
-          <div class="container">
-            <div class="carousel-caption text-start">
-              <h1>{{item.get_tittle()}}</h1>
-              <p>{{item.get_headline()}}</p>
-              <p><a class="btn btn-lg btn-primary" href="{{url_for('show_noticia', id=item.get_id())}}">Ler Notícia</a>
-              </p>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-
-      </div>
-    </div>
-    </div>
-    <!-- fim do carrossel -->
-
-    <h1 class="text-center m-3">Principais Noticias</h1>
+  <section class="py-3">
+    <h1 class="text-center m-3">Principais Noticias: {{noticias[0].get_state().get_nome()}}</h1>
     <div id="msg"></div>
     <!-- Lista de notícias (dinâmica) -->
+    {% for item in noticias %}
     <div class="row flex-row flex-wrap align-content-center m-0 justify-content-center">
-      {% for noticia in noticias %}
-      {% for item in noticia.get_news_list() %}
       <div class="card m-4 col shadow {{ item.get_state() }}">
         <img src={{ item.get_image() }} class="card-img-top shadow" alt="..."
           style="max-width: 100%; max-height: 200px; border-radius: 5px;">
@@ -130,7 +97,6 @@
           <a href="{{url_for('show_noticia', id=item.get_id())}}" class="btn btn-sm btn-primary">Ver Mais</a>
         </div>
       </div>
-      {% endfor %}
       {% endfor %}
     </div>
     <!-- fim da lista -->
