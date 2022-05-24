@@ -1,12 +1,13 @@
 class News:
 
-    def __init__(self, id, tittle, headline, text, image, state):
+    def __init__(self, id, tittle, headline, text, image, state, likes):
         self.__id = id
         self.__tittle = tittle
         self.__headline = headline
         self.__text = text
         self.__image = image
         self.__state = state
+        self.__likes = likes
     
     def get_id(self):
         return self.__id
@@ -26,5 +27,5 @@ class News:
     def get_state(self):
         return self.__state
 
-    
-# News (0, "", "", '', '',''),
+    def get_likes(self):
+        return self.__likes
