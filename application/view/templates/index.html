@@ -64,7 +64,7 @@
       <div>
         <div class="list-estados">
           <ul>
-            <li class="estado-list" onclick="mostrarTodas()"><a href="# ">
+            <li class="estado-list"><a href="# ">
                 Mosrtar Todas
               </a></li>
 
@@ -103,8 +103,7 @@
             <div class="carousel-caption text-start">
               <h1>{{item.get_tittle()}}</h1>
               <p>{{item.get_headline()}}</p>
-              <p><a class="btn btn-lg btn-primary" href="{{url_for('show_noticia', id=item.get_id())}}">Ler Notícia</a>
-              </p>
+              <p><a class="btn btn-lg btn-primary" href="{{ url_for('show_noticia',id=item.get_id()) }}" role="button">Ver mais</a></p>
             </div>
           </div>
         </div>
@@ -126,7 +125,7 @@
           style="max-width: 100%; max-height: 200px; border-radius: 5px;">
         <div class="card-body">
           <h5 class="card-title">{{ item.get_tittle() }}</h5>
-          <p class="card-text">{{item.get_headline()}}</p>
+          <p class="card-text subtitulo">{{item.get_headline()}}</p>
           <a href="{{url_for('show_noticia', id=item.get_id())}}" class="btn btn-sm btn-primary">Ver Mais</a>
         </div>
       </div>
@@ -140,9 +139,8 @@
     <p class="my-2">© 2022 Thiago Cardoso (202120325)</p>
   </footer>
 
-  <script defer src="{{ url_for('static',filename='js/script.js') }}">
+  <script defer src="{{ url_for('static', filename='js/script.js') }}"></script>
 
-  </script>
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
   </script>

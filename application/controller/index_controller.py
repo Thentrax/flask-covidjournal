@@ -8,6 +8,6 @@ carousel_list = ListaNoticia().lista_carrossel()
 estados = ListaEstados().lista_estados()
 
 
-@app.route("/")
+@app.route("/", methods=['GET'])
 def pagina_principal():
     return render_template("index.html", noticias=states_list, carrossel=carousel_list, estados=estados)

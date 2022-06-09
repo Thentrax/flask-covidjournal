@@ -31,14 +31,37 @@
             <p>{{new.get_headline()}}</p>
             <hr>
             <img src="{{new.get_image()}}" class="shadow" />
-            <hr>
             <p class="py-3 m-0">{{new.get_text()}}</p>
+            <hr>
+            <div class="comentarios">
+                <h2>Comentários: </h2>
+                {% if number_comments > 0 %}
+                    {% for comment in comments %}
+                        <div class="comentario">
+                            <h4>{{comment.get_author()}}</h4>
+                            <p>{{comment.get_text()}}</p>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>Esta notícia não possui comentários.</p>
+                {% endif %}
+
+                <div class="add_comentario">
+                    <button class="btn btn-sm btn-primary add-coment" onclick="abrirFormulario()">Adicionar Comentário</button>
+                    <form action="{{ url_for('show_noticia',id=new.get_id())}}" method="post" class="form_comentario">
+                    </form>
+                </div>
+            </div>
         </div>
+    
+        
     </section>
 
     <footer class="d-flex justify-content-center align-items-center shadow py-3">
         <p class="my-2">© 2022 Thiago Cardoso (202120325)</p>
     </footer>
+
+    <script defer src="{{url_for('static',filename='js/script.js')}}"></script>
 
 </body>
 

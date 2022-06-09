@@ -165,6 +165,22 @@ footer{
     object-fit: cover;
 }
 
+.subtitulo{
+    height: 10em;
+    overflow: hidden;
+}
+
+.add-coment{
+    background-color: #2A3346;
+    border-color: #2A3346;
+}
+
+.add-coment:hover{
+    background-color: #838791;
+    border-color: #838791;
+    transition: 200ms ease-in-out;
+}
+
 /* fim da notícia */
 
 @media screen and (max-width:480px) {
@@ -191,3 +207,10 @@ footer{
 
 
 }
+
+/* Formulário */
+
+.form-group{
+    margin-bottom: 1rem;
+}
+

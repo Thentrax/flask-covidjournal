@@ -20,3 +20,28 @@ function pesquisarNoticia() {
         }
     }
 }
+
+{
+    var form = document.querySelector(".form_comentario");
+    function abrirFormulario() {
+        form.innerHTML = `
+        <div class="form-group">
+            <label for="author">Nome:</label>
+            <input type="text" class="form-control" id="author" name="author" placeholder="Nome">
+        </div>
+        <div class="form-group">
+                <label for="text">Comentário:</label>
+                <textarea class="form-control" id="text" name="text" rows="3"></textarea>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="submit" class="btn btn-primary add-coment">Enviar</button>
+                <button class="btn btn-primary add-coment" onclick="fecharFormulario()"> Cancelar</button>
+            </div>
+        </div>`;
+    }
+
+    function fecharFormulario() {
+        form.innerHTML = '';
+    }
+}

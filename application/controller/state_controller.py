@@ -7,7 +7,7 @@ states_list = ListaNoticia().lista_noticia()
 carousel_list = ListaNoticia().lista_carrossel()
 estados = ListaEstados().lista_estados()
 
-@app.route("/estado/<string:sigla>")
+@app.route("/estado/<string:sigla>",  methods=['GET'])
 def state_news(sigla):
     for estado in estados:
         try:

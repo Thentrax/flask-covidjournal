@@ -1,13 +1,17 @@
+from nanoid import generate
+from application.model.entity.comments import Comments
+
 class News:
 
-    def __init__(self, id, tittle, headline, text, image, state, likes):
-        self.__id = id
+    def __init__(self, tittle, headline, text, image, state, likes):
+        self.__id = generate('0123456789')
         self.__tittle = tittle
         self.__headline = headline
         self.__text = text
         self.__image = image
         self.__state = state
         self.__likes = likes
+        self.__comments = []
     
     def get_id(self):
         return self.__id
@@ -29,3 +33,9 @@ class News:
 
     def get_likes(self):
         return self.__likes
+
+    def get_comments(self):
+        return self.__comments
+    
+    def add_comment(self, comment):
+        self.__comments.append(comment)
