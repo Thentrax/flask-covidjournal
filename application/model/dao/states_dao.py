@@ -2,7 +2,11 @@ from application.model.entity.states import Estados
 
 class ListaEstados:
 
-    def lista_estados(self):
+    def __init__(self):
+        pass
+
+    @staticmethod
+    def lista_estados():
         return [
                 Estados ('AC','Acre','http://www.educadores.diaadia.pr.gov.br/modules/galeria/uploads/11/thumb_1409852740bandeiraacre.png'),
                 Estados ('AL','Alagoas','http://www.educadores.diaadia.pr.gov.br/modules/galeria/uploads/11/thumb_1409852743Bandeira_de_Alagoas.svg.png'),

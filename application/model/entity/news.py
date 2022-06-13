@@ -37,5 +37,7 @@ class News:
     def get_comments(self):
         return self.__comments
     
-    def add_comment(self, comment):
+    def add_comment(self, comment, like):
         self.__comments.append(comment)
+        if like:
+            self.__likes += 1

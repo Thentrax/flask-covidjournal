@@ -145,6 +145,21 @@ section {
     transition: 200ms ease-in-out;
 }
 
+.card-bottom{
+    display: flex;
+    justify-content: space-between;
+}
+
+.text-likes{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+.new-text-likes{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
 footer{
     background-color: #2A3346;
 }
@@ -214,3 +229,31 @@ footer{
     margin-bottom: 1rem;
 }
 
+.form-flex{
+    display: flex;
+    justify-content: space-between;
+}
+
+.item-form-flex{
+    width: 50%;
+}
+
+.form-like{
+    text-align: end;
+    vertical-align: middle;
+}
+
+.like-box{
+    width: 20px;
+    height: 20px;
+}
+
+.comment-card{
+    border: #ffffff solid 1px;
+    max-width: 80% !important;
+    min-width: 80% !important;
+}
+
+.comment-card p{
+    margin-bottom: 0;
+}

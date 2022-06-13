@@ -26,19 +26,27 @@ function pesquisarNoticia() {
     function abrirFormulario() {
         form.innerHTML = `
         <div class="form-group">
-            <label for="author">Nome:</label>
-            <input type="text" class="form-control" id="author" name="author" placeholder="Nome">
-        </div>
-        <div class="form-group">
-                <label for="text">Comentário:</label>
-                <textarea class="form-control" id="text" name="text" rows="3"></textarea>
-        </div>
-        <div class="row">
-            <div class="col">
-                <button type="submit" class="btn btn-primary add-coment">Enviar</button>
-                <button class="btn btn-primary add-coment" onclick="fecharFormulario()"> Cancelar</button>
+        <div class="form-flex">
+            <div class="item-form-flex">
+                <label for="author">Nome:</label>
+                <input type="text" class="form-control form-name" id="author" name="author" placeholder="Nome">
             </div>
-        </div>`;
+            <div class="item-form-flex form-like">
+                <label for="like">Gostou da Notícia?</label>
+                <br>
+                <input type="checkbox" name="like" id="like" class="like-box">
+            </div>
+        </div>
+    <div class="form-group">
+            <label for="text">Comentário:</label>
+            <textarea class="form-control" id="text" name="text" rows="3"></textarea>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button type="submit" class="btn btn-primary add-coment">Enviar</button>
+            <button class="btn btn-primary add-coment" onclick="fecharFormulario()"> Cancelar</button>
+        </div>
+    </div>`;
     }
 
     function fecharFormulario() {

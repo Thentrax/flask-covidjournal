@@ -4,6 +4,7 @@ class Estados:
         self.__sigla  = sigla
         self.__nome = nome
         self.__flag = flag
+        self.__news_list = []
 
     def get_sigla(self):
         return self.__sigla

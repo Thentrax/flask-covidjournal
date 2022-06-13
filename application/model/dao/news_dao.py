@@ -26,26 +26,6 @@ sp_list = [
     News ("Covid-19: após ficar 24 horas sem mortes, SP registra mais seis óbitos e 590 casos da doença", "Ao todo, o Estado já contabilizou 14.329 mortes e 1.037.963 casos confirmados de infecção pelo coronavírus, desde o início da pandemia, há dois anos", 'Após o domingo (27) sem registros de mortes por covid-19, o Espírito Santo voltou a contabilizar óbitos provocados pela doença, nesta segunda-feira (28). De acordo com o Painel Covid-19, da Secretaria de Estado da Saúde (Sesa), foram registradas seis mortes entre domingo e segunda-feira, totalizando 14.329 desde o início da pandemia, há dois anos.\n\As seis mortes mais recentes contabilizadas no Painel Covid-19, no entanto, não necessariamente aconteceram nas últimas 24 horas. Após fins de semanas e feriados, é comum que os números estejam maiores, em relação aos dias anteriores, pelo fato de haver um represamento dos dados processados pela Sesa.', 'https://img.r7.com/images/folha-vitoria-28032022193424406?dimensions=771x420',estados[24], 40)
 ]
 
-
-news_list = []
-news_list.extend(df_list)
-news_list.extend(go_list)
-news_list.extend(mg_list)
-news_list.extend(rj_list)
-news_list.extend(sp_list)
-
-for new in news_list:
-    elements = len(news_list)-1
-    ordered = False
-    while not ordered:
-        ordered = True    
-        for new in range(elements):
-            if news_list[new].get_likes() < news_list[new+1].get_likes():
-                aux = news_list[new]
-                news_list[new] = news_list[new+1]
-                news_list[new+1] = aux
-                ordered = False
-
 estados[6].set_news_list(df_list)
 estados[8].set_news_list(go_list)
 estados[12].set_news_list(mg_list)
@@ -60,15 +40,36 @@ states_list =[
             estados[24]
         ]
 
+all_news = []
+all_news.extend(df_list)
+all_news.extend(go_list)
+all_news.extend(mg_list)
+all_news.extend(rj_list)
+all_news.extend(sp_list)
+
+elements = len(all_news)-1
+ordered = False
+while not ordered:
+    ordered = True
+    for element in range(elements):
+        if all_news[element].get_likes() < all_news[element+1].get_likes():
+            all_news[element], all_news[element+1] = all_news[element+1], all_news[element]
+            ordered = False
 
 class ListaNoticia:
-    def lista_noticia(self):
+    @staticmethod
+    def lista_noticia():
         return states_list
     
-    def lista_carrossel(self):
+    @staticmethod
+    def lista_carrossel():
         carousel_list = [
             states_list[0].get_news_list()[0],
             states_list[1].get_news_list()[0],
             states_list[2].get_news_list()[0]
         ]
         return carousel_list
+    
+    @staticmethod
+    def listar_por_likes():
+        return all_news

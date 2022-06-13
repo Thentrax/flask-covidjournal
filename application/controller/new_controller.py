@@ -16,9 +16,10 @@ def show_noticia(id):
                 if request.method == "POST":
                     author = request.form.get('author')
                     text = request.form.get('text')
+                    like = request.form.get('like')
                     try:
                         comment = Comments(author, text)
-                        new.add_comment(comment)
+                        new.add_comment(comment, like)
                         return redirect(f'/notícia/{id}')
                     except :
                         comment = None
